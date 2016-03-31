@@ -243,6 +243,8 @@ function twentysixteen_scripts() {
 		array(), false , true );
 	wp_enqueue_script('main', $scripts_prefix.'/build/main.bundle.js',
 		array(), false , true );
+	// wp_enqueue_script('debug', $scripts_prefix.'/build/debug.bundle.js',
+	// 	array(), false , true );
 
 
 	/*

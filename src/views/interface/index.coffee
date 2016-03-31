@@ -7,24 +7,24 @@
 'use strict'
 
 Ractive = require 'ractive'
-#Router  = require 'app/router.coffee'
+Router  = require 'app/router.coffee'
 require './assets/style.styl'
 
 Interface = Ractive.extend
-  el: '#routing'
+  el: '#ractive'
   data:->
     route: 'default'
   oninit:->
-    #Router.subject.subscribe (data, page)=>
-    #  @set 'route', data.key
-    #  return if not data?.page?
-    #  p = new data.page
-    #    el: '#page'
+    Router.subject.subscribe (data, page)=>
+      @set 'route', data.key
+      return if not data?.view?
+      p = new data.view
+        el: '#view'
     console.log 'interface init'
 
   template: '
     <h1>Page : {{route}}</h1>
-    <div id="page"></div>
+    <div id="view"></div>
   '
 
 instance  = new Interface()

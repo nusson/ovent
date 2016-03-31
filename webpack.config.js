@@ -23,7 +23,11 @@ module.exports = {
       'lodash',
       'rx',
       'page'
-    ]
+    ],
+    // debug: [
+    //   'webpack/hot/only-dev-serve',
+    //   'webpack-dev-server/client?http://0.0.0.0:3001'
+    // ]
   },
   resolve: {
     alias: {
@@ -39,6 +43,7 @@ module.exports = {
     ]
   },
   plugins: [
+    // new webpack.optimize.CommonsChunkPlugin('debug', 'debug.bundle.js'),
     new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.bundle.js'),
     new webpack.optimize.CommonsChunkPlugin({
       name:       'main',
@@ -50,6 +55,8 @@ module.exports = {
     //     warnings: false
     //   }
     // })
+
+    new webpack.HotModuleReplacementPlugin(),
   ],
   stylus: {
     use: [
@@ -60,16 +67,15 @@ module.exports = {
     ],
     // import: [cssConfig()]
   },
-  devServer: {
-    port:         '8080',
-    colors:       'true',
-    host:         'ovent.int',
-    hot:          true,
-    contentBase:  'src/'
-  },
+  // devServer: {
+  //   // port:         '80',
+  //   colors:       'true',
+  //   hot:          true,
+  //   contentBase:  'src/'
+  // },
   output: {
     path: paths.build,
-    publicPath: "/build/",
+    publicPath: "/wp-content/themes/ovent/build/",
     filename: "[name].bundle.js",
     chunkFilename: "[id].chunk.js"
   }

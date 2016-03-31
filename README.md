@@ -8,7 +8,6 @@ so just add this theme to a wordpress install and it should work
 [edit - not now... work only in dev mode (see bellow)]
 
 
-
 ## dev
 
 #### dependencies
