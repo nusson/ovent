@@ -21,7 +21,7 @@ from this dir
 npm install -g coffee-script
 npm install -g webpack webpack-dev-server
 npm install
-
+webpack
 ```
 
 
