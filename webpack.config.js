@@ -24,10 +24,6 @@ module.exports = {
       'rx',
       'page'
     ],
-    // debug: [
-    //   'webpack/hot/only-dev-serve',
-    //   'webpack-dev-server/client?http://0.0.0.0:3001'
-    // ]
   },
   resolve: {
     alias: {
@@ -55,8 +51,6 @@ module.exports = {
     //     warnings: false
     //   }
     // })
-
-    new webpack.HotModuleReplacementPlugin(),
   ],
   stylus: {
     use: [
@@ -67,15 +61,9 @@ module.exports = {
     ],
     // import: [cssConfig()]
   },
-  // devServer: {
-  //   // port:         '80',
-  //   colors:       'true',
-  //   hot:          true,
-  //   contentBase:  'src/'
-  // },
   output: {
     path: paths.build,
-    publicPath: "/wp-content/themes/ovent/build/",
+    publicPath: "build/",
     filename: "[name].bundle.js",
     chunkFilename: "[id].chunk.js"
   }

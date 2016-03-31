@@ -26,19 +26,11 @@ webpack
 
 #### developpment
 
-For dev ease, I use `webpack-dev-server` to enjoy Hot Module Remplacement
-it will serve files in http://ovent.int:8080/dist
-from this dir
-```
-webpack-dev-server --hot --inline
-```
-
-make `ovent.int` vhost
+just use `webpack --watch` from this theme dir
 
 in wp-config.php
 ```
 define('WP_DEBUG', true);
-define('PATH_LIBS_DEV', 'http://ovent.int:8080');
 ```
 
 
@@ -50,8 +42,5 @@ define('WP_DEBUG', false);
 ```
 
 to compile libs (styles etc)
+just use `webpack` from this theme dir
 
-```
-cd path/to/theme
-webpack
-```
