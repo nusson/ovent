@@ -15,7 +15,7 @@ so just add this theme to a wordpress install and it should work
 
 + npm (just install nodejs)
 
-from this dir
+from this dir (wp-content/themes/ovent) :
 
 ```
 npm install -g coffee-script
@@ -32,7 +32,6 @@ it will serve files in http://ovent.int:8080/dist
 from this dir
 ```
 webpack-dev-server --hot --inline
-
 ```
 
 make `ovent.int` vhost
