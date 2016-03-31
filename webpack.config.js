@@ -39,7 +39,7 @@ module.exports = {
       { test: /\.css$/,       loader: "style!css" },
       { test: /\.styl$/,      loader: "style-loader!css-loader!stylus-loader" },
       { test: /\.coffee$/,    loader: 'coffee' },
-      // { test: /\.html|ractive$/,  loader: 'ractive' },
+      { test: /\.html|ractive$/,  loader: 'ractive' },
     ]
   },
   plugins: [

@@ -6,8 +6,9 @@
 ###
 'use strict'
 
-Ractive = require 'ractive'
-Router  = require 'app/router.coffee'
+Ractive   = require 'ractive'
+Router    = require 'app/router.coffee'
+Template  = require './assets/template.html'
 require './assets/style.styl'
 
 Interface = Ractive.extend
@@ -22,10 +23,7 @@ Interface = Ractive.extend
         el: '#view'
     console.log 'interface init'
 
-  template: '
-    <h1>Page : {{route}}</h1>
-    <div id="view"></div>
-  '
+  template: Template
 
 instance  = new Interface()
 module.exports = instance
