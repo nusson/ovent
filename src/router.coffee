@@ -64,4 +64,3 @@ Page()
 module.exports =
   subject:  subject
   keys:     keys
-  routes:   routes

@@ -25,11 +25,11 @@
 <div id="page" class="site">
 	<div class="site-inner">
 
-		<header id="masthead" class="site-header">
+		<header id="masthead" class="site-header main-sidebar sidebar _togglable" aria-hidden="false">
 			<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'social' ) ) : ?>
-				<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'twentysixteen' ); ?></button>
+				<button id="menu-toggle" class="toggle-btn"><?php _e( 'Menu', 'twentysixteen' ); ?></button>
 			<?php endif; ?>
-			<div class="site-header-main">
+			<div class="content">
 
 				<!-- <main-navigation -->
 				<?php if ( has_nav_menu( 'primary' ) ) : ?>
@@ -43,6 +43,15 @@
 					</nav>
 				<?php endif; ?>
 				<!-- main-navigation/>  -->
+
+				<!-- <site-branding -->
+				<div class="site-quote">
+					<blockquote>
+						<p>You know the golden rule, don’t you boy? Those who have the gold make the rules.</p>
+  						<footer>— Crazy hunch-backed old guy from the movie Aladdin</footer>
+					</blockquote>
+				</div>
+				<!-- </site-branding -->
 
 				<!-- <site-branding -->
 				<div class="site-branding">
@@ -84,7 +93,7 @@
 						<?php
 							wp_nav_menu( array(
 								'theme_location' => 'social',
-								'menu_class'     => 'social-links-menu',
+								'menu_class'     => 'social-menu',
 								'depth'          => 1,
 								'link_before'    => '<span class="screen-reader-text">',
 								'link_after'     => '</span>',

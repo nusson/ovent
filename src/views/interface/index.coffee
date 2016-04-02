@@ -9,6 +9,7 @@
 Ractive   = require 'ractive'
 Router    = require 'app/router.coffee'
 Template  = require './assets/template.html'
+Sidebar   = require 'app/views/sidebar/index.coffee'
 require './assets/style.styl'
 
 Interface = Ractive.extend

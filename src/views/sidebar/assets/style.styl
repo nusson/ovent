@@ -1,0 +1,104 @@
+/**
+  Sidebar style
+  include sub items like menu, social nav ...
+  @author Nicolas Husson <hello@nusson.ninja>
+
+  _TAB  / Table of Contents
+  -------
+  _VAR  / Vars (default if no config)
+  _GEN  / Generic
+  _Men  / Main menu
+  _Soc  / Social Menu
+  _TOG  / Tooglable Modifiers
+*/
+
+//===========/----------------------------------------------
+//  [_VAR]  /  Vars (default if no config)
+//=========/------------------------------------------------
+// from config
+_c-black  := #000
+_c-cream  := #FFF
+// new
+w         =  320px
+  
+//===========/----------------------------------------------
+//  [_GEN]  /  Generic
+//=========/------------------------------------------------
+.main-sidebar
+  background white
+  z-index: 100
+  edit()
+  fixed 0 false 0 0
+  width w
+  // padding 50px 20px 20px
+  // display flex
+  // align-items: flex-start
+  // flex-direction: column
+  // justify-content: space-between
+  // background-color: _c-cream
+  // header,
+  // .content
+  //   width 100%
+  >.content
+    height 100%
+    display flex
+    flex-direction column
+    justify-content space-between
+
+.site-branding
+  // order 1
+
+.main-navigation
+  order -1
+  
+//===========/----------------------------------------------
+//  [_Men]  /  Main menu
+//=========/------------------------------------------------
+#menu-principal
+  display flex
+  justify-content space-between
+  padding-bottom: 8px
+  border-bottom 4px solid _c-black
+  .menu-item
+    position: relative
+    &:before
+      content ''
+      triangle( up, 4px, _c-black )
+      position: absolute
+      top 20px
+      align(h)
+      transform translateY(0px)
+      transition transform .4s easing('out-expo')
+    &.actif
+    &:hover
+      &:before
+        transform translateY(-4px)
+
+
+//===========/----------------------------------------------
+//  [_Soc]  /  Social Menu
+//=========/------------------------------------------------
+.social-menu
+  cf()
+  .menu-item
+    float: left
+    &:not(:first-child)
+      margin-left: 1em
+
+
+.sidebar
+  transition transform .8s easing('out-quart')
+  transform translateX(0)
+  //===========/----------------------------------------------
+  //  [_TOG]  /  Tooglable Modifiers
+  //=========/------------------------------------------------
+  	
+  .toggle-btn
+    absolute 0 -50px false false
+  	// display none
+  &._togglable
+    &[aria-hidden=true]
+      transform translateX(- 100%)
+      transition-timing-function easing('in-quad')
+      .toggle-btn
+    	  display inline-block

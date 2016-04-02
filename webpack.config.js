@@ -31,8 +31,12 @@ module.exports = {
   },
   resolve: {
     alias: {
-      app:  path.resolve(paths.src)
-    }
+      app:      path.resolve(paths.src),
+      jquery:   'zeptojs'
+    },
+    extensions:["", ".webpack.js", ".web.js", ".js",
+      '.coffee', '.styl', '.html'
+    ]
   },
   module: {
     loaders: [

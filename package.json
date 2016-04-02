@@ -12,6 +12,7 @@
     "coffee-script": "^1.10.0",
     "css-loader": "^0.23.1",
     "jeet": "^6.1.2",
+    "keymirror": "^0.1.1",
     "kouto-swiss": "^0.12.0",
     "lodash": "^4.6.1",
     "page": "^1.7.1",
@@ -20,11 +21,13 @@
     "ractive-ractive": "^1.1.1",
     "rupture": "^0.6.1",
     "rx": "^4.1.0",
+    "rx-dom": "^7.0.3",
     "style-loader": "^0.13.0",
     "stylus": "^0.54.2",
     "stylus-loader": "^2.0.0",
     "webpack": "^1.12.14",
     "webpack-dev-middleware": "^1.5.1",
-    "webpack-hot-middleware": "^2.10.0"
+    "webpack-hot-middleware": "^2.10.0",
+    "zeptojs": "^1.1.4"
   }
 }

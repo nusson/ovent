@@ -6,6 +6,10 @@
 ###
 'use strict'
 
+
+require 'app/helpers/lodash_key-mirror'
+# require 'app/helpers/lodash_pluck'
+
 ###*
  * Ractive general config
 ###
