@@ -9,7 +9,7 @@ _       = require 'lodash'
 Rx      = require 'rx'
 Ractive = require 'ractive'
 Actions = require './actions'
-# InterfaceActions = require 'components/interface/actions'
+InterfaceActions = require 'app/views/interface/actions'
 
 defaults =
   close: false
@@ -33,7 +33,7 @@ States  = Ractive.extend
   watchClose:->
     console.log 'watchClose'
     Rx.Observable.merge(
-      # _changeToMobileHandler.bind(@)()
+      _changeToMobileHandler.bind(@)()
       _toogleHandler.bind(@)()
     )
 
@@ -46,8 +46,7 @@ States  = Ractive.extend
 _changeToMobileHandler  = ->
   InterfaceActions.subject.filter (action)->
     action.key is InterfaceActions.keys.CHANGE_MODE
-  .map (action)->
-    action.value
+  .map (action)-> action.value
   .map (mode)=>
     close:     mode is InterfaceActions.MODES.MOBILE
 
@@ -60,8 +59,7 @@ _toogleHandler  = ->
   Actions.subject.filter (action)->
     action.key is Actions.keys.TOGGLE
   .map ->           'close'
-  .map (keypath)=>
-    @get keypath
+  .map (keypath)=>  @get keypath
   .map (value)->
     close: not value
 

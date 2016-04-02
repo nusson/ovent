@@ -12,17 +12,23 @@ Template  = require './assets/template.html'
 Sidebar   = require 'app/views/sidebar/index.coffee'
 require './assets/style.styl'
 
+Actions     = require './actions'
+States      = require './states'
+
 Interface = Ractive.extend
   el: '#ractive'
   data:->
     route: 'default'
   oninit:->
+    # @todo : Manage routes
     Router.subject.subscribe (data, page)=>
       @set 'route', data.key
       return if not data?.view?
       p = new data.view
         el: '#view'
-    console.log 'interface init'
+
+    # Dispatch resize
+    Actions.resizeFromSource Rx.DOM.resize(window)
 
   template: Template
 
