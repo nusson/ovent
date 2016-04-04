@@ -4,14 +4,107 @@
  *
  *	@author Nicolas Husson <hello@nusson.ninja>
  */
-// edit()
 
+//===========/----------------------------------------------
+//  [_VAR]  /  Vars (default if no config)
+//=========/------------------------------------------------
+// from config
+_w_sidebar  := 320px
+_f-open-sans  := 'Open Sans', Arial
 
+//===========/----------------------------------------------
+//  [_GEN]  /  Generic
+//=========/------------------------------------------------
+
+// wp dafuck !!!
 #wpadminbar
   display none
+html 
+  margin-top 0 !important
  
+// edit()
 meyer-reset()
+box-sizing-reset()
+  
+html
+  font-family _f-open-sans
+  
+html, body, #page
+  height 100%
+  margin 0
 
-body
-  background-color _c-cream
-  //background-color red
+#page
+  position relative
+  display flex
+  flex-direction row
+  min-height 100%
+  
+  .sidebar
+    height 100%
+    // @todo : based on body class
+    +mobile()
+      position fixed
+
+  .site-inner
+    display flex
+    flex 1
+    flex-direction column
+    justify-content space-between
+
+#colophon
+  edit()
+
+
+
+
+
+
+form
+  display flex
+  flex-direction row
+  margin 3em 0
+   
+  .field
+    position relative
+    display flex
+    flex-direction row
+    overflow hidden
+    padding-bottom .1em
+    &:not(:first-child)
+      margin 2em 0
+      
+    >span
+      line-height 1.2em
+      font-size 1em
+    
+    >label
+      absolute 0
+      z-index 2
+      padding 1em .5em
+      line-height 1.2em
+      font-size 1em
+      // transform translateX(-100%)
+    
+
+    input,
+    textarea
+      outline none
+      border none
+      border-radius 0
+      background none
+      border 1px solid _c-drark_medium
+      padding 1em .5em
+      line-height 1.2em
+      font-size 1em
+      width 100%
+      
+    &:before
+      content: 'Name : '
+      padding 1em .5em
+      absolute 0 false 0 0
+      width 100px
+      transform translateX(-100%)
+      z-index 3
+        
+    // input
+    //   border-left-width 100px

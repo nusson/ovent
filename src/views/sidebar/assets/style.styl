@@ -16,10 +16,9 @@
 //  [_VAR]  /  Vars (default if no config)
 //=========/------------------------------------------------
 // from config
-_c-black  := #000
-_c-cream  := #FFF
-// new
-w         =  320px
+_c-black    := #000
+_c-cream    := #FFF
+_w_sidebar  := 320px
   
 //===========/----------------------------------------------
 //  [_GEN]  /  Generic
@@ -28,8 +27,8 @@ w         =  320px
   background white
   z-index: 100
   edit()
-  fixed 0 false 0 0
-  width w
+  // fixed 0 false 0 0
+  width _w_sidebar
   // padding 50px 20px 20px
   // display flex
   // align-items: flex-start
@@ -51,8 +50,6 @@ w         =  320px
 .main-navigation
   order -1
   
-//===========/----------------------------------------------
-//  [_Men]  /  Main menu
 //=========/------------------------------------------------
 #menu-principal
   display flex
